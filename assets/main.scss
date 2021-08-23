@@ -1,0 +1,66 @@
+// RESET STYLE
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// STYLES
+.switch {
+  width: 60px;
+  height: 34px;
+  position: relative;
+  user-select: none;
+  display: inline-block;
+
+  input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    &:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    &:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    &:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  }
+
+  .slider {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: 0.4s;
+    position: absolute;
+    background-color: #ccc;
+
+    &:before {
+      width: 26px;
+      content: '';
+      height: 26px;
+      left: 0.25rem;
+      bottom: 0.25rem;
+      transition: 0.4s;
+      position: absolute;
+      background-color: #fff;
+    }
+
+    &.round {
+      border-radius: 34px;
+
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
+}
